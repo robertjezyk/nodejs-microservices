@@ -1,6 +1,10 @@
 # Specify base image
 FROM node:14-alpine
 
+# Changes needed due to create-react-app not running correctly inside Docker containers
+ENV CI=true
+ENV WDS_SOCKET_PORT=0
+
 # Setting work directory for files added to container
 WORKDIR /app
 
